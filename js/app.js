@@ -1,6 +1,7 @@
 // Detecta en qué página está
 const currentPage = window.location.pathname;
 
+
 // Login.html
 if (currentPage.includes('login.html')) {
   document.getElementById('loginForm').addEventListener('submit', async function (e) {
@@ -41,7 +42,7 @@ if (currentPage.includes('login.html')) {
 
 // Admin.html
 if (currentPage.includes('admin.html')) {
-  const apiUrl = 'http://localhost:3000/eventos';
+  const apiUrl = 'http://localhost:3000/events';
   const eventsTable = document.getElementById('eventsTableBody');
   const eventForm = document.getElementById('eventForm');
   const eventModal = document.getElementById('eventModal');
@@ -93,7 +94,7 @@ if (currentPage.includes('admin.html')) {
         const row = document.createElement('tr');
         row.innerHTML = `
           <td>${evento.id}</td>
-          <td>${evento.nombre || 'Sin título'}</td>
+          <td>${evento.nombre || 'Campeonato de ajedrez'}</td>
           <td>${evento.fecha}</td>
           <td>${evento.ubicacion || ''}</td>
           <td>${evento.cupos || 0}</td>
